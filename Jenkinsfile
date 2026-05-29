@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        AWS_DEFAULT_REGION = us-east-1
-        S3_BUCKET = prajwal-static-website-2026
+        AWS_DEFAULT_REGION = 'us-east-1'
+        S3_BUCKET = prajwal-'static-website-2026'
     }
 
     stages {
