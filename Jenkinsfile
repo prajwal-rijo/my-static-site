@@ -3,17 +3,17 @@ pipeline {
 
     environment {
         AWS_DEFAULT_REGION = 'us-east-1'
-         S3_BUCKET = 'prajwal-static-website-2026'
+        S3_BUCKET = 'prajwal-static-website-2026'
     }
 
     stages {
 
         stage('Checkout') {
-    steps {
-        git branch: 'main',
-            url: 'https://github.com/prajwal-rijo/my-static-site.git'
-    }
-}
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/prajwal-rijo/my-static-site.git'
+            }
+        }
 
         stage('Build') {
             steps {
@@ -29,12 +29,13 @@ pipeline {
                         credentialsId: 'aws-creds'
                     ]
                 ]) {
-
                     sh '''
-                    aws s3 cp index.html s3://$S3_BUCKET/
+                        aws s3 cp index.html s3://$S3_BUCKET/
                     '''
                 }
             }
         }
+
     }
+}
 
