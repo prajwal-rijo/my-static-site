@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         AWS_DEFAULT_REGION = 'us-east-1'
-        S3_BUCKET = S3_BUCKET = 'prajwal-static-website-2026'
+         S3_BUCKET = 'prajwal-static-website-2026'
     }
 
     stages {
